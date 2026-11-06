@@ -1,0 +1,538 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Life Leveling — Build Your Wealth</title>
+
+    <meta name="description" content="Life Leveling - Personal wealth and business growth challenge.">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    
+<link rel="manifest" href="./manifest.json">
+
+<meta name="theme-color" content="#00c878">
+
+<link rel="icon" type="image/png" href="./icon-192.png">
+
+<link rel="apple-touch-icon" href="./icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Life Leveling">
+
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="fa-solid fa-chart-line"></i>
+            </div>
+
+            <div class="brand-text">
+                <h2>LIFE<span>LEVELING</span></h2>
+                <p>BUILD YOUR WEALTH</p>
+            </div>
+        </div>
+
+        <div class="sidebar-label">MAIN MENU</div>
+
+        <nav class="sidebar-nav">
+
+            <a href="#dashboard" class="nav-link active" data-page="dashboard">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="#strategy" class="nav-link" data-page="strategy">
+                <i class="fa-solid fa-chess"></i>
+                <span>Strategi Keuangan & Bisnis Model</span>
+            </a>
+
+            <a href="#quests" class="nav-link" data-page="quests">
+                <i class="fa-solid fa-bullseye"></i>
+                <span>Quest & Challenge</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="system-status">
+                <span class="status-indicator"></span>
+                <span>System Online</span>
+            </div>
+
+            <p>PERSONAL WEALTH JOURNEY</p>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MOBILE OVERLAY
+    ========================== -->
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div>
+                    <h1 id="pageTitle">Dashboard</h1>
+                    <p id="currentDate">Welcome to your wealth journey.</p>
+                </div>
+
+            </div>
+
+            <div class="topbar-right">
+
+                <div class="connection-status">
+                    <span class="status-indicator"></span>
+                    <span id="connectionStatus">Local Data</span>
+                </div>
+
+                <div class="user-avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             PAGE 1: DASHBOARD
+        ========================== -->
+
+        <section class="page-content" id="dashboard">
+
+            <div class="welcome-section">
+
+                <div>
+                    <span class="section-eyebrow">YOUR FINANCIAL JOURNEY</span>
+
+                    <h2>Build Your <span>Empire.</span></h2>
+
+                    <p>
+                        Set your goals, build your strategy, and level up your wealth.
+                    </p>
+                </div>
+
+                <div class="challenge-deadline">
+                    <span>5 YEARS CHALLENGE</span>
+                    <strong id="countdownTimer">Loading...</strong>
+                    <small>Remaining time</small>
+                </div>
+
+            </div>
+
+
+            <!-- FINANCIAL OVERVIEW -->
+
+            <div class="section-heading">
+                <div>
+                    <h3>Financial Overview</h3>
+                    <p>Your current financial position.</p>
+                </div>
+            </div>
+
+
+            <div class="financial-grid">
+
+                <div class="financial-card wealth-card">
+
+                    <div class="financial-card-top">
+                        <span>Total Wealth</span>
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+
+                    <h2 id="totalWealth">Rp0</h2>
+
+                    <small>Current net worth</small>
+
+                </div>
+
+
+                <div class="financial-card">
+
+                    <div class="financial-card-top">
+                        <span>Total Income</span>
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                    </div>
+
+                    <h2 id="totalIncome">Rp0</h2>
+
+                    <small>Total recorded income</small>
+
+                </div>
+
+
+                <div class="financial-card">
+
+                    <div class="financial-card-top">
+                        <span>Total Expense</span>
+                        <i class="fa-solid fa-arrow-trend-down"></i>
+                    </div>
+
+                    <h2 id="totalExpense">Rp0</h2>
+
+                    <small>Total recorded expenses</small>
+
+                </div>
+
+
+                <div class="financial-card">
+
+                    <div class="financial-card-top">
+                        <span>Current Level</span>
+                        <i class="fa-solid fa-ranking-star"></i>
+                    </div>
+
+                    <h2 id="currentLevel">0</h2>
+
+                    <small id="levelTitle">New Player</small>
+
+                </div>
+
+            </div>
+
+
+            <!-- LEVEL PROGRESS -->
+
+            <div class="level-section">
+
+                <div class="level-section-header">
+
+                    <div>
+                        <span class="section-eyebrow">YOUR PROGRESSION</span>
+
+                        <h2>Level <span id="levelCounter">0</span></h2>
+
+                        <p id="levelDescription">
+                            Your journey starts here.
+                        </p>
+                    </div>
+
+                    <div class="level-emblem">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="level-progress-details">
+
+                    <span>Current Progress</span>
+
+                    <strong id="progressPercentage">0%</strong>
+
+                </div>
+
+
+                <div class="progress-track">
+
+                    <div
+                        class="progress-bar"
+                        id="levelProgressBar"
+                        style="width: 0%">
+                    </div>
+
+                </div>
+
+
+                <div class="level-target-details">
+
+                    <div>
+                        <small>Current Wealth</small>
+                        <strong id="currentWealthLabel">Rp0</strong>
+                    </div>
+
+                    <div>
+                        <small>Next Target</small>
+                        <strong id="nextLevelTarget">Rp1.000.000</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="level-action-buttons">
+
+                    <button class="btn btn-primary" id="levelUpButton">
+                        <i class="fa-solid fa-arrow-up"></i>
+                        Level Up
+                    </button>
+
+                    <button class="btn btn-secondary" id="levelDownButton">
+                        <i class="fa-solid fa-arrow-down"></i>
+                        Level Down
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- DASHBOARD BOTTOM -->
+
+            <div class="dashboard-grid">
+
+                <div class="content-card">
+
+                    <div class="content-card-header">
+                        <div>
+                            <h3>Recent Activities</h3>
+                            <p>Your latest financial activities.</p>
+                        </div>
+
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+
+                    <div id="recentActivityList" class="activity-list">
+
+                        <div class="empty-state">
+                            <i class="fa-solid fa-inbox"></i>
+                            <p>No activities yet.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="content-card">
+
+                    <div class="content-card-header">
+                        <div>
+                            <h3>Active Challenges</h3>
+                            <p>Your current missions.</p>
+                        </div>
+
+                        <i class="fa-solid fa-flag-checkered"></i>
+                    </div>
+
+                    <div id="activeQuestList" class="quest-list">
+
+                        <div class="empty-state">
+                            <i class="fa-solid fa-bullseye"></i>
+                            <p>No active challenges.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PAGE 2: STRATEGY
+        ========================== -->
+
+        <section class="page-content hidden" id="strategy">
+
+            <div class="page-introduction">
+
+                <span class="section-eyebrow">FINANCIAL & BUSINESS PLANNING</span>
+
+                <h2>Strategy <span>Center.</span></h2>
+
+                <p>
+                    Plan your next move. Find opportunities, build business models,
+                    and create new income sources.
+                </p>
+
+            </div>
+
+
+            <div class="strategy-overview-grid">
+
+                <div class="content-card">
+                    <i class="fa-solid fa-lightbulb strategy-icon"></i>
+                    <h3>Business Ideas</h3>
+                    <p>Explore and record potential business opportunities.</p>
+                </div>
+
+                <div class="content-card">
+                    <i class="fa-solid fa-chart-pie strategy-icon"></i>
+                    <h3>Business Models</h3>
+                    <p>Plan capital, revenue, expenses, and profit.</p>
+                </div>
+
+                <div class="content-card">
+                    <i class="fa-solid fa-money-bill-transfer strategy-icon"></i>
+                    <h3>Income Sources</h3>
+                    <p>Develop multiple sources of income.</p>
+                </div>
+
+                <div class="content-card">
+                    <i class="fa-solid fa-bullseye strategy-icon"></i>
+                    <h3>Next Level Strategy</h3>
+                    <p>Plan how to reach your next financial milestone.</p>
+                </div>
+
+            </div>
+
+
+            <div class="content-card strategy-main-card">
+
+                <div class="content-card-header">
+                    <div>
+                        <h3>My Business Strategies</h3>
+                        <p>Manage your ideas and business plans.</p>
+                    </div>
+
+                    <button class="btn btn-primary" id="addStrategyButton">
+                        <i class="fa-solid fa-plus"></i>
+                        Add Strategy
+                    </button>
+                </div>
+
+                <div id="strategyList" class="strategy-list">
+
+                    <div class="empty-state">
+                        <i class="fa-solid fa-chess"></i>
+                        <p>No strategies created yet.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PAGE 3: QUEST & CHALLENGE
+        ========================== -->
+
+        <section class="page-content hidden" id="quests">
+
+            <div class="page-introduction">
+
+                <span class="section-eyebrow">YOUR MISSION STARTS HERE</span>
+
+                <h2>Quest & <span>Challenge.</span></h2>
+
+                <p>
+                    Complete your missions, achieve your financial goals,
+                    and unlock your next level.
+                </p>
+
+            </div>
+
+
+            <div class="quest-summary-grid">
+
+                <div class="financial-card">
+                    <span>Total Quests</span>
+                    <h2 id="totalQuests">0</h2>
+                </div>
+
+                <div class="financial-card">
+                    <span>Completed</span>
+                    <h2 id="completedQuests">0</h2>
+                </div>
+
+                <div class="financial-card">
+                    <span>In Progress</span>
+                    <h2 id="pendingQuests">0</h2>
+                </div>
+
+            </div>
+
+
+            <div class="content-card quest-main-card">
+
+                <div class="content-card-header">
+
+                    <div>
+                        <h3>My Challenges</h3>
+                        <p>Track your current missions.</p>
+                    </div>
+
+                    <button class="btn btn-primary" id="addQuestButton">
+                        <i class="fa-solid fa-plus"></i>
+                        Add Quest
+                    </button>
+
+                </div>
+
+
+                <div id="questPageList" class="quest-page-list">
+
+                    <div class="empty-state">
+                        <i class="fa-solid fa-flag"></i>
+                        <p>No quests created yet.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FOOTER
+        ========================== -->
+
+        <footer class="main-footer">
+
+            <p>
+                LIFE LEVELING
+                <span>•</span>
+                BUILD YOUR WEALTH
+            </p>
+
+            <small>Every level starts with one decision.</small>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- Main JavaScript -->
+<script src="script.js"></script>
+
+</body>
+</html>
